@@ -13,6 +13,7 @@ const couterReducer = (
   const INCREASE_SUGAR = 'INCREASE_SUGAR';
 
   const LOGIN = 'LOGIN';
+  const LOGOUT = 'LOGOUT';
 
   switch (action.type) {
     case INCREMENT_COFFEE:
@@ -29,6 +30,8 @@ const couterReducer = (
       return { ...state, sugar: state.sugar + action.number };
     case LOGIN:
       return { ...state, isLoggedIn: true };
+    case LOGOUT:
+      return { ...state, isLoggedIn: false };
   }
 
   return state;
