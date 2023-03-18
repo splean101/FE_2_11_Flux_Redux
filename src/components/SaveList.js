@@ -1,5 +1,5 @@
 import React from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 
 const SaveList = () => {
   const isLoggedIn = useSelector((state) => state.isLoggedIn);
@@ -7,13 +7,13 @@ const SaveList = () => {
   const sugar = useSelector((state) => state.sugar);
 
   const save = () => {
-    localStorage.setItem('coffee', coffee)
-    localStorage.setItem('sugar', sugar)
+    localStorage.setItem('coffee', coffee);
+    localStorage.setItem('sugar', sugar);
   };
-  const clear = ()=>{
-    localStorage.removeItem('coffee')
-    localStorage.removeItem('sugar')
-  }
+  const clear = () => {
+    localStorage.removeItem('coffee');
+    localStorage.removeItem('sugar');
+  };
   return isLoggedIn ? (
     <div className="save">
       <button onClick={save}>SAVE</button>
